@@ -17,7 +17,7 @@
 
     </div>
 
-    <form action="">
+    <form id="cars_newsletter_form" action="">
       <div class="email_container">
         <label for="email">Email</label>
         <input id="email" type="email" name="email">
@@ -27,6 +27,7 @@
         <label for="cars">Choose a car:</label>
 
         <select name="cars" id="cars">
+          <option disabled selected value="">Select a car type</option>
           <option value="volvo">Volvo</option>
           <option value="saab">Saab</option>
           <option value="mercedes">Mercedes</option>
@@ -36,7 +37,7 @@
 
       <div>
         <input id="checkbox" type="checkbox" name="checkbox">
-        <label for="checkbox">Checkbox before submitting the form</label>
+        <label for="checkbox">Checkbox to get weekly newsletters</label>
       </div>
 
       <div>
@@ -45,7 +46,7 @@
     </form>
 
     <section class="details_summary_section">
-      <h2>Accordion section</h2>
+      <h2>Accordion section using details and summary HTML elements</h2>
 
       <div class="details_summary_container">
         <details>

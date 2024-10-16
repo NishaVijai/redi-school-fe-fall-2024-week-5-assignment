@@ -31,7 +31,6 @@ const convertFirstLetterOfStringValueToUpperCaseUsingSlice = (string) => {
   let capitalizeFirstCharacterOfAString = firstCharacterOfAString.toUpperCase();
   let restOfAString = string.slice(1);
   let result = capitalizeFirstCharacterOfAString + restOfAString;
-  // console.log("Capitalize first letter of a string: ", result);
   console.log(`Capitalize first letter of a "${string}"using convertFirstLetterOfStringValueToUpperCaseUsingSlice: ${result}`);
   return result;
 };
@@ -55,15 +54,31 @@ convertFirstLetterOfStringValueToUpperCaseUsingSlice(greeting);
 isFirstLetterOfUpperCase("Hello", greeting);
 isFirstLetterOfUpperCase("hello", greeting);
 
+// --------------------------
+// Slide 11/40
+
+// Exercise:
+// 1. Create this buon using ONLY
+// JavaScript.
+// 2. Add styles using CSS.
+// 3. On click change the background color
+// and the text content of the buon.
+// 4. Optional - can you make the buon
+// change the text and style only for 10
+// seconds before it goes back to previous
+// state?
+
 const bodyElement = document.querySelector("main");
 const createButtonElement = document.createElement("button");
+// const emoji_icon_fire = String.fromCodePoint(0x1F525);
+const emoji_icon_heart_eyes = String.fromCodePoint(0x1F60D);
 
 bodyElement.append(createButtonElement);
 // bodyElement.appendChild(createButtonElement);
 createButtonElement.classList.add("button_element");
 const buttonText = "Add to cart";
-const buttonUpdatedText = "Added to cart 😍";
-// const buttonUpdatedText = "Added to cart" + `&#128540;`;
+// const buttonUpdatedText = "Added to cart 😍";
+const buttonUpdatedText = "Added to cart " + emoji_icon_heart_eyes;
 createButtonElement.textContent = buttonText;
 
 const onClickChangeButtonStyleHandler = () => {
@@ -94,7 +109,68 @@ createButtonElement.addEventListener("click", () => {
 
 // --------------------------
 // Slide 22/40
-// TODO: Form element exercise with event listeners
+
+const email_input_element = document.getElementById("email");
+const select_element_cars_type = document.getElementById("cars");
+const checkbox_element_weekly_newsletter = document.getElementById("checkbox");
+const form_element_cars_newsletter = document.getElementById("cars_newsletter_form");
+
+const UserDetails = {
+  user_email: "",
+  user_car_type_preference: "",
+  user_weekly_newsletter_checkbox_value: false
+};
+
+const form_data = { UserDetails };
+
+const alert_user_to_fill_empty_fields = ({ value }) => alert(`Fields - ${value} are empty, please fill out the form fields`);
+
+const check_empty_form_submission = () => {
+  if (UserDetails.user_email == "" || UserDetails.user_email == null) {
+    alert_user_to_fill_empty_fields(UserDetails.user_email);
+  }
+  else if (UserDetails.user_car_type_preference == "" || UserDetails.user_car_type_preference == null) {
+    alert_user_to_fill_empty_fields(UserDetails.user_car_type_preference);
+  }
+  else if (UserDetails.user_weekly_newsletter_checkbox_value == false) {
+    alert_user_to_fill_empty_fields(UserDetails.user_weekly_newsletter_checkbox_value);
+  }
+  else {
+    console.log("Form fiels are not empty, can be submitted.");
+  }
+};
+
+const save_user_email = (event) => {
+  form_data.UserDetails.user_email = event.target.value;
+  console.log("save_user_email: ", event.target.value);
+  return form_data.UserDetails.user_email;
+};
+
+const save_user_car_type_preference = (event) => {
+  form_data.UserDetails.user_car_type_preference = event.target.value;
+  console.log("save_user_car_type_preference: ", event.target.value);
+  return form_data.UserDetails.user_car_type_preference;
+};
+
+const save_user_weekly_newsletter_checkbox_value = (event) => {
+  form_data.UserDetails.user_weekly_newsletter_checkbox_value = event.target.checked;
+  console.log("save_user_weekly_newsletter_checkbox_value: ", event.target.checked);
+  return form_data.UserDetails.user_weekly_newsletter_checkbox_value;
+};
+
+const form_submit_cars_newsletter = (event) => {
+  event.preventDefault();
+  console.log("Form data - form_submit_cars_newsletter: ", form_data);
+  check_empty_form_submission();
+  return form_data;
+};
+
+email_input_element.addEventListener("input", save_user_email);
+select_element_cars_type.addEventListener("change", save_user_car_type_preference);
+checkbox_element_weekly_newsletter.addEventListener("input", save_user_weekly_newsletter_checkbox_value);
+form_element_cars_newsletter.addEventListener("submit", form_submit_cars_newsletter);
+
+console.log("Form data: ", form_data);
 
 // --------------------------
 // Slide 25/40
@@ -120,7 +196,9 @@ console.log("d: ", d);
 
 
 // --------------------------
+// Slide 22/40
 
+// Exercise:
 // Create an accordion that expands on click:
 // 1. Build the HTML.
 // 2. Add the functionality with JS:

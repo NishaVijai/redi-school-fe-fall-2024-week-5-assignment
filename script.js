@@ -1,60 +1,131 @@
-console.log("Week 4 - class assignment");
+console.log("Week 5 - class assignment");
 
-const orderFoodFromDifferentRestaurants = (restaurantName, foodName, amountOfFood) => `You are ordering ${amountOfFood} ${foodName} from ${restaurantName}`;
+const greeting = "hello";
 
-console.log(orderFoodFromDifferentRestaurants("Omo's Pizza", "Chicken Pizza", 5));
+const lengthOfVariable = (string) => {
+  console.log("string.length: ", string.length);
+  return string.length;
+};
 
-// **************
+const convertStringToUpperCase = (string) => {
+  console.log("string.toUpperCase(): ", string.toUpperCase());
+  return string.toUpperCase();
+};
 
-// A. Create 3 HTML element divs
-// a. Add some text to 
+const splitStringValue = (string) => {
+  console.log("string.split(''): ", string.split(""));
+  return string.split("");
+};
 
-const first_div_element = document.getElementById("first_div");
+const convertFirstLetterOfStringValueToUpperCase = (string) => {
+  let [firstLetter, ...rest] = string;
+  let capitalizeFirstLetter = firstLetter.toUpperCase();
+  let result = [capitalizeFirstLetter, ...rest].join("");
+  // console.log("Capitalize first letter of a string: ", result);
+  console.log(`Capitalize first letter of a "${string}" using convertFirstLetterOfStringValueToUpperCase: ${result}`);
+  return result;
+};
 
-// Not working
-// Can get only array of Elements - can not apply style on this fetched variable.
-// const second_div_element = document.getElementsByClassName("second_div");
+const convertFirstLetterOfStringValueToUpperCaseUsingSlice = (string) => {
+  let firstCharacterOfAString = string.charAt(0);
+  let capitalizeFirstCharacterOfAString = firstCharacterOfAString.toUpperCase();
+  let restOfAString = string.slice(1);
+  let result = capitalizeFirstCharacterOfAString + restOfAString;
+  // console.log("Capitalize first letter of a string: ", result);
+  console.log(`Capitalize first letter of a "${string}"using convertFirstLetterOfStringValueToUpperCaseUsingSlice: ${result}`);
+  return result;
+};
 
-// Working - to apply background color on the element
-const second_div_element = document.querySelector(".second_div");
+const isFirstLetterOfUpperCase = (value, string) => {
+  let result = convertFirstLetterOfStringValueToUpperCaseUsingSlice(string) === value;
+  console.log(`convert string - "${string}" - first letter, using convertFirstLetterOfStringValueToUpperCaseUsingSlice method & compare with passed argument value: "${value}" using isFirstLetterOfUpperCase : ${result}`);
+  return result;
+};
 
-// Not working
-// Can get only array of Elements - can not apply style on this fetched variable.
-// const third_div_element = document.getElementsByTagName("div");
+const logOnConsole = (message) => console.log(`${message}`);
 
-// Working - grabbin the first div
-// const third_div_element = document.querySelector("div");
-const third_div_element = document.querySelectorAll("div")[2];
+logOnConsole(greeting);
 
-const read_more_button_element = document.getElementById("read_more_button");
+lengthOfVariable(greeting);
+convertStringToUpperCase(greeting);
+splitStringValue(greeting);
+convertFirstLetterOfStringValueToUpperCase(greeting);
+convertFirstLetterOfStringValueToUpperCaseUsingSlice(greeting);
 
-console.log(first_div_element);
-// first_div_element.innerHTML = "Test changing content";
+isFirstLetterOfUpperCase("Hello", greeting);
+isFirstLetterOfUpperCase("hello", greeting);
 
-console.log(second_div_element);
-console.log(third_div_element);
-console.log(read_more_button_element);
+const bodyElement = document.querySelector("main");
+const createButtonElement = document.createElement("button");
 
-read_more_button_element.setAttribute("disabled", true);
+bodyElement.append(createButtonElement);
+// bodyElement.appendChild(createButtonElement);
+createButtonElement.classList.add("button_element");
+const buttonText = "Add to cart";
+const buttonUpdatedText = "Added to cart 😍";
+// const buttonUpdatedText = "Added to cart" + `&#128540;`;
+createButtonElement.textContent = buttonText;
 
-first_div_element.style.height = "100px";
-first_div_element.style.width = "300px";
-first_div_element.style.border = "2px solid red";
-first_div_element.style.backgroundColor = "coral";
+const onClickChangeButtonStyleHandler = () => {
+  createButtonElement.textContent = buttonUpdatedText;
+  createButtonElement.classList.add("button_on_click");
+};
 
-second_div_element.style.height = "100px";
-second_div_element.style.width = "300px";
-second_div_element.style.border = "2px solid green";
-second_div_element.style.backgroundColor = "#87365e";
+const onClickRemoveButtonStyleHandler = () => {
+  createButtonElement.textContent = buttonText;
+  createButtonElement.classList.remove("button_on_click");
+};
 
-third_div_element.style.height = "100px";
-third_div_element.style.width = "300px";
-third_div_element.style.border = "2px solid blue";
-third_div_element.style.backgroundColor = "#00ff95";
+const setTimeOutForSomeTime = (functionName, time) => {
+  setTimeout(functionName, time);
+};
 
-const createDivElement = document.createElement("div");
-const node = document.createTextNode("This is new.");
-const createPElement = document.createElement("p");
-// document.appendChild(createDivElement);
-first_div_element.appendChild(createPElement);
-createPElement.textContent = "New Element";
+// Add a button (PreventSetTimeout) and use the following clearTimeout to prevent setTimeout.
+// const clearTimeoutAfterSomeTime = (functionName, time) => {
+//   console.log("clearTimeoutAfterSomeTime");
+//   clearTimeout(functionName, time);
+// };
+
+createButtonElement.addEventListener("click", () => {
+  onClickChangeButtonStyleHandler();
+  setTimeOutForSomeTime(onClickRemoveButtonStyleHandler, 2000);
+  // setTimeOutForSomeTime(onClickRemoveButtonStyleHandler, 1000);
+});
+
+// --------------------------
+// Slide 22/40
+// TODO: Form element exercise with event listeners
+
+// --------------------------
+// Slide 25/40
+
+// Basic Operators
+let a, b, c, d;
+a = 1;
+b = 1;
+console.log("At first exectution, value of a: ", a);
+console.log("At first exectution, value of b: ", b);
+console.log("At first exectution, value of c: ", c);
+console.log("At first exectution, value of d: ", d);
+
+c = ++a;
+console.log("Second exectution, value of a, due to ++a: ", a);
+console.log("c: ", c);
+// c:  2
+
+d = b++;
+console.log("Second exectution, value of b, because of b++: ", b);
+console.log("d: ", d);
+// d:  1
+
+
+// --------------------------
+
+// Create an accordion that expands on click:
+// 1. Build the HTML.
+// 2. Add the functionality with JS:
+// ● The icon should be rotated on click.
+// ● Toggling the accordion should
+// show/hide the text underneath.
+
+

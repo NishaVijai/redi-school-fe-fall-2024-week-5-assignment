@@ -3,31 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 4 - JS - class assignment</title>
+  <title>Week 5 - JS - class assignment</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
   <header>
-    <h1>Week 4 - Class Assignment</h1>
+    <h1>Week 5 - Class Assignment</h1>
   </header>
 
   <main>
-    <div id="first_div">
-      <p>First div content with Id</p>
+    <div class="display_button">
+
     </div>
 
-    <div class="second_div">
-      <p>Second div content with class</p>
-    </div>
+    <form action="">
+      <div class="email_container">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email">
+      </div>
 
-    <div>
-      <p>Third div content without Id or class</p>
-    </div>
+      <div>
+        <label for="cars">Choose a car:</label>
 
-    <div>
-      <button id="read_more_button">Read more</button>
-    </div>
+        <select name="cars" id="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+
+      <div>
+        <input id="checkbox" type="checkbox" name="checkbox">
+        <label for="checkbox">Checkbox before submitting the form</label>
+      </div>
+
+      <div>
+        <button class="submit_button" type="submit">Submit</button>
+      </div>
+    </form>
+
+    <section class="details_summary_section">
+      <h2>Accordion section</h2>
+
+      <div class="details_summary_container">
+        <details>
+          <summary>Read more</summary>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In, sit inventore! Odit vel, alias, modi pariatur distinctio laboriosam consequuntur aut omnis esse ducimus consectetur, exercitationem soluta assumenda ut. Veniam, iure!
+          Expedita pariatur vero illum similique ipsa, quae debitis voluptate cum sapiente animi accusamus, sunt, minus cumque facere ut ducimus quod eligendi nisi! Deserunt quasi doloribus reiciendis fugit minima vitae tempora!</p>
+        </details>
+      </div>
+
+      <div class="details_summary_container">
+        <details>
+          <summary>Read more</summary>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad asperiores libero quia tempore expedita dolorem, recusandae numquam ducimus rem quibusdam vitae laboriosam quis odio dolores aliquid soluta? Sed, rerum libero?</p>
+        </details>
+      </div>
+    </section>
   </main>
 
   <footer>

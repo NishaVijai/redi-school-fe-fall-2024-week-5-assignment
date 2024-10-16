@@ -5,7 +5,7 @@
 }
 
 body {
-   background-color: #a0b489;
+   background-color: #d1d3cf;
    display: grid;
    grid-template-columns: 1fr;
    grid-template-rows: 300px auto 300px;
@@ -15,6 +15,8 @@ body {
     "footer";
   place-items: center;
   height: 100vh;
+  font-size: 16px;
+  /* height: 100vh; */
 }
 
 header {
@@ -30,4 +32,91 @@ main {
 
 footer {
   grid-area: footer;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+form {
+  /* border: 2px solid red; */
+  /* height: 300px;
+  width: 300px; */
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* align-items: center; */
+  justify-content: center;
+  /* justify-content: space-evenly; */
+  gap: 1rem;
+}
+
+form div {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* flex-wrap: wrap; */
+  /* align-items: flex-start; */
+  /* justify-content: space-between; */
+  /* align-items: center;
+  justify-content: center; */
+  /* gap: 2rem; */
+}
+
+select {
+  height: 20px;
+  width: 250px;
+}
+
+summary {
+  cursor: pointer;
+  transition: all .03s ease-in-out;
+}
+
+/* summary {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: all .03s ease-in-out;
+} */
+
+.summary_on_click_style {
+  /* transform:  */
+}
+
+.email_container input {
+  height: 20px;
+  width: 300px;
+}
+
+.submit_button {
+  height: 30px;
+  width: 150px;
+  background-color: #5aae5a;
+  border-radius: 10px;
+}
+
+.details_summary_section {
+  /* width: 100%; */
+  
+}
+
+.details_summary_container {
+  /* width: 100%; */
+  max-width: 300px;
+}
+
+.button_element {
+  background-color: black;
+  /* background-color: green; */
+  border: 2px solid transparent;
+  border-radius: 10px;
+  color: white;
+  height: 100px;
+  width: 350px;
+  font-size: 2rem;
+}
+
+.button_on_click {
+  background-color: green;
 }

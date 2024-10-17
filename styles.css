@@ -5,18 +5,19 @@
 }
 
 body {
-   background-color: #d1d3cf;
-   display: grid;
-   grid-template-columns: 1fr;
-   grid-template-rows: 300px auto 300px;
-   grid-template-areas: 
+  background-color: #d1d3cf;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
     "header"
     "main"
     "footer";
   place-items: center;
-  height: 100vh;
+  gap: 2rem;
   font-size: 16px;
-  /* height: 100vh; */
+  margin: 1rem 0;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 header {
@@ -24,10 +25,13 @@ header {
 }
 
 main {
+  /* border: 1px solid red; */
   grid-area: main;
   display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
   gap: 1rem;
-  height: 100%;
+  margin: 0 auto;
 }
 
 footer {
@@ -40,27 +44,11 @@ button {
 }
 
 form {
-  /* border: 2px solid red; */
-  /* height: 300px;
-  width: 300px; */
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
-  /* justify-content: space-evenly; */
   gap: 1rem;
-}
-
-form div {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* flex-wrap: wrap; */
-  /* align-items: flex-start; */
-  /* justify-content: space-between; */
-  /* align-items: center;
-  justify-content: center; */
-  /* gap: 2rem; */
 }
 
 select {
@@ -73,17 +61,23 @@ summary {
   transition: all .03s ease-in-out;
 }
 
-/* summary {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  transition: all .03s ease-in-out;
-} */
-
-.summary_on_click_style {
-  /* transform:  */
+/* Add to cart button from JS style - starts */
+.button_element {
+  background-color: black;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  color: white;
+  height: 100px;
+  width: 350px;
+  font-size: 2rem;
 }
 
+.button_on_click {
+  background-color: green;
+}
+/* Add to cart button from JS style - ends */
+
+/* Form style - starts */
 .email_container input {
   height: 20px;
   width: 300px;
@@ -96,27 +90,50 @@ summary {
   border-radius: 10px;
 }
 
+.submit_button:focus,
+.submit_button:hover {
+  background-color: #346334;
+  color: #fff;
+}
+/* Form style - ends */
+
+/* Accordion style - starts */
+.accordion_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.accordion_outer_container,
 .details_summary_section {
-  /* width: 100%; */
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 600px;
 }
 
-.details_summary_container {
-  /* width: 100%; */
-  max-width: 300px;
+summary {
+  transition: transform 0.3s ease-in-out;
 }
 
-.button_element {
-  background-color: black;
-  /* background-color: green; */
-  border: 2px solid transparent;
-  border-radius: 10px;
-  color: white;
-  height: 100px;
-  width: 350px;
-  font-size: 2rem;
+.test {
+  color: red;
+  content: none;
 }
 
-.button_on_click {
-  background-color: green;
+.rotate_marker {
+  transform: rotate(90deg);
+}
+/* Accordion style - ends */
+
+/* Media query for desktop */
+@media only screen and (min-width: 768px) {
+  body {
+    height: 100vh;
+  }
 }

@@ -68,13 +68,15 @@ isFirstLetterOfUpperCase("hello", greeting);
 // seconds before it goes back to previous
 // state?
 
-const bodyElement = document.querySelector("main");
+// const bodyElement = document.querySelector("main");
+const displayAddToCartButtonElement = document.querySelector(".display_add_to_card_button");
 const createButtonElement = document.createElement("button");
 // const emoji_icon_fire = String.fromCodePoint(0x1F525);
 const emoji_icon_heart_eyes = String.fromCodePoint(0x1F60D);
 
-bodyElement.append(createButtonElement);
+// bodyElement.append(createButtonElement);
 // bodyElement.appendChild(createButtonElement);
+displayAddToCartButtonElement.append(createButtonElement);
 createButtonElement.classList.add("button_element");
 const buttonText = "Add to cart";
 // const buttonUpdatedText = "Added to cart 😍";
@@ -196,7 +198,7 @@ console.log("d: ", d);
 
 
 // --------------------------
-// Slide 22/40
+// Slide 23/40
 
 // Exercise:
 // Create an accordion that expands on click:
@@ -206,4 +208,12 @@ console.log("d: ", d);
 // ● Toggling the accordion should
 // show/hide the text underneath.
 
+// TODO
+const summaryElement = document.querySelector(".details_summary_section details summary");
 
+const rotate_accordion_icon = () => {
+  summaryElement.classList.toggle("test");
+  console.log("TEST");
+};
+
+summaryElement.addEventListener("click", rotate_accordion_icon, false);

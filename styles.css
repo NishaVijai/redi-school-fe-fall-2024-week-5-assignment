@@ -49,11 +49,12 @@ form {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  margin: 1rem 0.5rem;
 }
 
 select {
   height: 20px;
-  width: 250px;
+  min-width: 90vw;
 }
 
 summary {
@@ -68,7 +69,7 @@ summary {
   border-radius: 10px;
   color: white;
   height: 100px;
-  width: 350px;
+  min-width: 90vw;
   font-size: 2rem;
 }
 
@@ -80,12 +81,12 @@ summary {
 /* Form style - starts */
 .email_container input {
   height: 20px;
-  width: 300px;
+  min-width: 90vw;
 }
 
 .submit_button {
   height: 30px;
-  width: 150px;
+  min-width: 60vw;
   background-color: #5aae5a;
   border-radius: 10px;
 }
@@ -135,5 +136,15 @@ summary {
 @media only screen and (min-width: 768px) {
   body {
     height: 100vh;
+  }
+
+  select,
+  .email_container input,
+  .submit_button {
+    min-width: 10vw;
+  }
+
+  .button_element {
+    min-width: 20vw;
   }
 }

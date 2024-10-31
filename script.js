@@ -196,7 +196,6 @@ console.log("Second exectution, value of b, because of b++: ", b);
 console.log("d: ", d);
 // d:  1
 
-
 // --------------------------
 // Slide 23/40
 
@@ -208,12 +207,13 @@ console.log("d: ", d);
 // ● Toggling the accordion should
 // show/hide the text underneath.
 
-// TODO
-const summaryElement = document.querySelector(".details_summary_section details summary");
+const iconElement = document.querySelector(".accordion_icon");
+const contentElement = document.querySelector(".accordion_content");
+const accordionContainerElement = document.querySelector(".accordion_container");
 
 const rotate_accordion_icon = () => {
-  summaryElement.classList.toggle("test");
-  console.log("TEST");
+  iconElement.classList.toggle('rotate');
+  contentElement.classList.toggle("show");
 };
 
-summaryElement.addEventListener("click", rotate_accordion_icon, false);
+accordionContainerElement.addEventListener("click", rotate_accordion_icon);
